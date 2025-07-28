@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Barışaq? ❤️</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ffdde1, #ee9ca7);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+        
+        h1 {
+            font-size: 36px;
+            color: #fff;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            font-size: 20px;
+            margin: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        #yesBtn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        #noBtn {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+        
+        #message {
+            font-size: 28px;
+            margin-top: 40px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Mənimlə barışmaq istəyirsən? 😊</h1>
+    <button id="yesBtn" class="btn">Hə</button>
+    <button id="noBtn" class="btn">Yox</button>
+
+    <div id="message"></div>
+
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const message = document.getElementById('message');
+
+        // “Yox” düyməsinə basmaq mümkün deyil – yerini dəyişir
+        noBtn.addEventListener('mouseenter', () => {
+            const x = Math.floor(Math.random() * (window.innerWidth - 100));
+            const y = Math.floor(Math.random() * (window.innerHeight - 100));
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+        });
+
+        // “Hə” düyməsinə basıldıqda mesaj çıxır
+        yesBtn.addEventListener('click', () => {
+            message.textContent = "Səni sevirəm ❤️";
+        });
+    </script>
+
+</body>
+
+</html>
